@@ -1,5 +1,6 @@
 package com.example.tpandroid;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -8,20 +9,26 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class RegisteurActivity extends AppCompatActivity {
     private TextInputEditText Email,Password,Name,LastName,Phone;
      private TextView goback;
      private Button RegisteurButton;
+     private ProgressBar progC;
      FirebaseAuth mAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+       // progC=findViewById(R.id.ProgCreate);
         setContentView(R.layout.activity_registeur);
         Email=findViewById(R.id.Emailuserin);
         Name=findViewById(R.id.firstnameuser);
@@ -67,9 +74,22 @@ public class RegisteurActivity extends AppCompatActivity {
                     Password.setError("Password has to be more then 6 Carateur");
                     return;
                 }
+              //  progC.setVisibility(View.VISIBLE);
+                mAuth.createUserWithEmailAndPassword(email,passwd).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if(task.isSuccessful()){
+                            Toast.makeText(RegisteurActivity.this,"User Created",Toast.LENGTH_LONG).show();
+                            startActivity(new Intent(RegisteurActivity.this, MainActivity.class));
+                        }
+                        else{
+                            Toast.makeText(RegisteurActivity.this,"Errer " +passwd+task.getException().getMessage(),Toast.LENGTH_SHORT).show();
+                        }
 
+                    }
+                });
                 //startActivity(new Intent(RegisteurActivity.this,MainActivity2.class));
-                Toast.makeText(RegisteurActivity.this,"hello "+name,Toast.LENGTH_SHORT).show();
+               /// Toast.makeText(RegisteurActivity.this,"hello "+name,Toast.LENGTH_SHORT).show();
             }
         });
     }
