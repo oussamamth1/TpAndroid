@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">TpAndroid</string>
+    <string name="Email_Adress">AdressEmail</string>
+    <string name="password">Password</string>
+</resources>

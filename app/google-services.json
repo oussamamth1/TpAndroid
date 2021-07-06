@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "70759214706",
+    "project_id": "tpandroid-bc026",
+    "storage_bucket": "tpandroid-bc026.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:70759214706:android:7a97ad81866fe95f41dceb",
+        "android_client_info": {
+          "package_name": "com.example.tpandroid"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "70759214706-k1ba5s3tgjp6aeq2bga6327n6805io4a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBNtqq2KoZqtUReDvjPrqFvixDtKn91Qgs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "70759214706-k1ba5s3tgjp6aeq2bga6327n6805io4a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
