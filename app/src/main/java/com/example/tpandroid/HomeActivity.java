@@ -16,7 +16,9 @@ private TextView mytxt;
         mymage=findViewById(R.id.imageView);
         mytxt=findViewById(R.id.textView);
         mymage.setImageResource(R.drawable.jamel);
-        String email = getIntent().getStringExtra("EXTRA_SESSION_ID");
-        mytxt.setText(email);
+        //String email = getIntent().getStringExtra("EXTRA_SESSION_ID");
+        String name = getIntent().getStringExtra("username");
+
+        mytxt.setText(name);
     }
 }

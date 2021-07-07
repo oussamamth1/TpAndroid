@@ -18,6 +18,9 @@ import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 
 public class MainActivity2 extends AppCompatActivity {
 private TextInputLayout textInputLayout;
@@ -37,6 +40,10 @@ Button buttonLogin;
         Email=findViewById(R.id.EmailEdit);
         buttonLogin=findViewById(R.id.LOginbutton);
 LoginProg=findViewById(R.id.progressBar);
+        String usermail = getIntent().getStringExtra("email");
+        String username = getIntent().getStringExtra("name");
+        String userlastname = getIntent().getStringExtra("lastname");
+        String userphone = getIntent().getStringExtra("phone");
 
         buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,7 +62,8 @@ LoginProg=findViewById(R.id.progressBar);
                     Password.setError("Password has to be more then 6 Carateur");
                     return;
                 }
-
+               // DatabaseReference reference= FirebaseDatabase.getInstance().getReference("user");
+               // Query chek=reference.orderByChild("email").equalTo(email);
 
                 //
                  LoginProg.setVisibility(View.VISIBLE);
@@ -63,7 +71,10 @@ LoginProg=findViewById(R.id.progressBar);
                     @Override
                     public void onComplete(@NonNull  Task<AuthResult> task) {
                         if(task.isSuccessful()){Intent intent=new Intent(getApplicationContext(),HomeActivity.class);
-                            intent.putExtra("EXTRA_SESSION_ID", email);
+                          //  intent.putExtra("EXTRA_SESSION_ID", usermail);
+                          //  intent.putExtra("userlaastname", userlastname);
+                           // intent.putExtra("username", username);
+                           // intent.putExtra("userphone", userphone);
                             startActivity(intent);
                            // startActivity(new Intent(getApplicationContext(),HomeActivity.class));
 
