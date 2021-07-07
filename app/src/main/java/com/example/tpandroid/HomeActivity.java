@@ -29,6 +29,7 @@ private TextView txtemail,txtname,txtlastname,txtphone;
     }
 
     public void chowProfil(View view) {
+
         startActivity( new Intent(HomeActivity.this,Profile.class));
     }
 }

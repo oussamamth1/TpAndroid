@@ -40,10 +40,10 @@ Button buttonLogin;
         Email=findViewById(R.id.EmailEdit);
         buttonLogin=findViewById(R.id.LOginbutton);
 LoginProg=findViewById(R.id.progressBar);
-        String usermail = getIntent().getStringExtra("email");
+      /*  String usermail = getIntent().getStringExtra("email");
         String username = getIntent().getStringExtra("name");
         String userlastname = getIntent().getStringExtra("lastname");
-        String userphone = getIntent().getStringExtra("phone");
+        String userphone = getIntent().getStringExtra("phone");*/
 
         buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override

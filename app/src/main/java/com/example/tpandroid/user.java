@@ -1,29 +1,10 @@
 package com.example.tpandroid;
 
 public class user {
+    private String LastName;
     private String Phone;
     private String Email;
-
     private  String Name;
-    private String LastName;
-    public user() {
-    }
-
-
-    public user(String name, String lastName, String email, String phone ) {
-        this.Name=name;
-        this.LastName=lastName;
-        this.Email=email;
-        this.Phone=phone;
-    }
-
-    public String getName() {
-        return Name;
-    }
-
-    public void setName(String name) {
-        Name = name;
-    }
 
     public String getLastName() {
         return LastName;
@@ -49,6 +30,11 @@ public class user {
         Email = email;
     }
 
+    public String getName() {
+        return Name;
+    }
 
-
+    public void setName(String name) {
+        Name = name;
+    }
 }

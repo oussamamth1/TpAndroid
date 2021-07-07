@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -24,7 +25,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.HashMap;
 
 public class RegisteurActivity extends AppCompatActivity {
-    private TextInputEditText Email,Password,Name,LastName,Phone;
+    private TextInputEditText Email,Password,Name,Prenom,Phone;
+
      private TextView goback;
      private Button RegisteurButton;
      private ProgressBar progC;
@@ -36,15 +38,16 @@ user userdetail;
         super.onCreate(savedInstanceState);
        // progC=findViewById(R.id.ProgCreate);
         setContentView(R.layout.activity_registeur);
+
         Email=findViewById(R.id.Emailuserin);
         Name=findViewById(R.id.firstnameuser);
-        LastName=findViewById(R.id.lastNameuser);
+        Prenom=findViewById(R.id.lastNameuser);
         Phone=findViewById(R.id.Phoneuser);
         Password=findViewById(R.id.Password);
 
-        ref= FirebaseDatabase.getInstance().getReference().child("users");
+        ref= FirebaseDatabase.getInstance().getReference("users");
         RegisteurButton=findViewById(R.id.RegisteurButton);
-        userdetail=new user();
+        //userdetail=new user();
         mAuth=FirebaseAuth.getInstance();
         RegisteurButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,15 +63,17 @@ userdetail.setPhone(Phone.getText().toString().trim());*/
 
                 String name=Name.getText().toString().trim();
                 String email=Email.getText().toString().trim();
-                String lastN=LastName.getText().toString().trim();
+                String prenom=Prenom.getText().toString().trim();
                 String passwd=Password.getText().toString().trim();
                 String phone=Phone.getText().toString().trim();
 
                 HashMap<String ,String> usermap=new HashMap<>();
+
                 usermap.put("name",name);
-                usermap.put("lastname",lastN);
                 usermap.put("email",email);
+                usermap.put("prenom",prenom);
                 usermap.put("phone",phone);
+                usermap.put("password",passwd);
 
 ref.push().setValue(usermap).addOnCompleteListener(new OnCompleteListener<Void>() {
     @Override
@@ -87,7 +92,7 @@ Toast.makeText(RegisteurActivity.this,"data saved ",Toast.LENGTH_SHORT).show();
 
                             //startActivity(new Intent(RegisteurActivity.this, MainActivity.class));
 
-                            ref.push().setValue(usermap);
+                           // ref.push().setValue(usermap);
                             Intent intent=new Intent(RegisteurActivity.this,MainActivity2.class);
                             startActivity(intent);
 
@@ -125,19 +130,19 @@ return true;
 }
     public Boolean ValidLastName(){
         String noWaitSpace="\\A\\w{4,20}\\z";
-        String val=LastName.getText().toString().trim();
+        String val=Prenom.getText().toString().trim();
         if(val.isEmpty()){
-            LastName.setError("Name is required");
+            Prenom.setError("Name is required");
             return false;
 
         }else if(!val.matches(noWaitSpace)){
-            LastName.setError("White space not allowed");
+            Prenom.setError("White space not allowed");
             return false;
         }
         else
 
         {
-            LastName.setError(null);
+            Prenom.setError(null);
             return true;
         }
 
