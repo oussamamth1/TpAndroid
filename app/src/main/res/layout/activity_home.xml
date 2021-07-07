@@ -19,18 +19,78 @@
         tools:srcCompat="@drawable/jamel" />
 
     <TextView
-        android:id="@+id/textView"
-        android:textColor="#3F51B5"
-        android:paddingStart="5dp"
+        android:id="@+id/getname"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:layout_marginTop="128dp"
-        android:textSize="24sp"
         android:layout_marginStart="5dp"
+        android:layout_marginTop="20dp"
+        android:paddingStart="5dp"
+        android:text="name"
+        android:textColor="#3F51B5"
 
-        android:text="Hi From me"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.343"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <TextView
+        android:id="@+id/getlastname"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="72dp"
+        android:paddingStart="5dp"
+        android:text="lastname"
+        android:textColor="#3F51B5"
+
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.406"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <TextView
+        android:id="@+id/getemail"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="124dp"
+        android:paddingStart="5dp"
+        android:text="emailaddres"
+        android:textColor="#3F51B5"
+
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.343"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <TextView
+        android:id="@+id/getphone"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="164dp"
+        android:paddingStart="5dp"
+        android:text="phone"
+        android:textColor="#3F51B5"
+
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.343"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:text="Button"
+        android:onClick="chowProfil"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/getphone" />
 </androidx.constraintlayout.widget.ConstraintLayout>

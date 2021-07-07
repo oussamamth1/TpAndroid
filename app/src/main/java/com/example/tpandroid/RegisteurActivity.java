@@ -67,7 +67,12 @@ userdetail.setPhone(Phone.getText().toString().trim());*/
                 usermap.put("lastname",lastName);
                 usermap.put("email",email);
                 usermap.put("phone",phone);
-
+ref.push().setValue(usermap).addOnCompleteListener(new OnCompleteListener<Void>() {
+    @Override
+    public void onComplete(@NonNull  Task<Void> task) {
+Toast.makeText(RegisteurActivity.this,"data saved ",Toast.LENGTH_SHORT).show();
+    }
+});
                // user User=new user(name,lastName,email,phone);
                // ref.child("user").setValue(User);
               //  progC.setVisibility(View.VISIBLE);
