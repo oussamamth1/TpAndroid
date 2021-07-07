@@ -9,7 +9,8 @@ public class user {
     public user() {
     }
 
-    public user(String name, String lastName, String email, String phone) {
+
+    public user(String name, String lastName, String email, String phone ) {
         this.Name=name;
         this.LastName=lastName;
         this.Email=email;

@@ -41,6 +41,7 @@ user userdetail;
         LastName=findViewById(R.id.lastNameuser);
         Phone=findViewById(R.id.Phoneuser);
         Password=findViewById(R.id.Password);
+
         ref= FirebaseDatabase.getInstance().getReference().child("users");
         RegisteurButton=findViewById(R.id.RegisteurButton);
         userdetail=new user();
@@ -59,14 +60,16 @@ userdetail.setPhone(Phone.getText().toString().trim());*/
 
                 String name=Name.getText().toString().trim();
                 String email=Email.getText().toString().trim();
-                String lastName=LastName.getText().toString().trim();
+                String lastN=LastName.getText().toString().trim();
                 String passwd=Password.getText().toString().trim();
                 String phone=Phone.getText().toString().trim();
+
                 HashMap<String ,String> usermap=new HashMap<>();
                 usermap.put("name",name);
-                usermap.put("lastname",lastName);
+                usermap.put("lastname",lastN);
                 usermap.put("email",email);
                 usermap.put("phone",phone);
+
 ref.push().setValue(usermap).addOnCompleteListener(new OnCompleteListener<Void>() {
     @Override
     public void onComplete(@NonNull  Task<Void> task) {
