@@ -40,8 +40,8 @@ Button buttonLogin;
         Email=findViewById(R.id.EmailEdit);
         buttonLogin=findViewById(R.id.LOginbutton);
 LoginProg=findViewById(R.id.progressBar);
-      /*  String usermail = getIntent().getStringExtra("email");
-        String username = getIntent().getStringExtra("name");
+     // String usermail = getIntent().getStringExtra("email");
+        /*String username = getIntent().getStringExtra("name");
         String userlastname = getIntent().getStringExtra("lastname");
         String userphone = getIntent().getStringExtra("phone");*/
 
@@ -70,8 +70,9 @@ LoginProg=findViewById(R.id.progressBar);
                mAuth.signInWithEmailAndPassword(email,passwd).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull  Task<AuthResult> task) {
-                        if(task.isSuccessful()){Intent intent=new Intent(getApplicationContext(),HomeActivity.class);
-                          //  intent.putExtra("EXTRA_SESSION_ID", usermail);
+                        if(task.isSuccessful()){
+                            Intent intent=new Intent(getApplicationContext(),HomeActivity.class);
+                            intent.putExtra("email", email);
                           //  intent.putExtra("userlaastname", userlastname);
                            // intent.putExtra("username", username);
                            // intent.putExtra("userphone", userphone);
