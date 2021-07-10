@@ -23,7 +23,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 
 public class MainActivity2 extends AppCompatActivity {
-private TextInputLayout textInputLayout;
+//private TextInputLayout textInputLayout;
 private TextInputEditText Email,Password;
 private TextView singin;
     FirebaseAuth mAuth;
@@ -32,10 +32,11 @@ Button buttonLogin;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main2);
         singin=findViewById(R.id.signIn);
         mAuth = FirebaseAuth.getInstance();
 
-        setContentView(R.layout.activity_main2);
+
         Password=findViewById(R.id.Password);
         Email=findViewById(R.id.EmailEdit);
         buttonLogin=findViewById(R.id.LOginbutton);
@@ -71,7 +72,7 @@ LoginProg=findViewById(R.id.progressBar);
                     @Override
                     public void onComplete(@NonNull  Task<AuthResult> task) {
                         if(task.isSuccessful()){
-                            Intent intent=new Intent(getApplicationContext(),HomeActivity.class);
+                            Intent intent=new Intent(MainActivity2.this,HomeActivity.class);
                             intent.putExtra("email", email);
                           //  intent.putExtra("userlaastname", userlastname);
                            // intent.putExtra("username", username);

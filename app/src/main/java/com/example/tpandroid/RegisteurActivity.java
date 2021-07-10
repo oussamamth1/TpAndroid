@@ -27,9 +27,9 @@ import java.util.HashMap;
 public class RegisteurActivity extends AppCompatActivity {
     private TextInputEditText Email,Password,Name,Prenom,Phone;
 
-     private TextView goback;
+    // private TextView goback;
      private Button RegisteurButton;
-     private ProgressBar progC;
+     //private ProgressBar progC;
      FirebaseAuth mAuth;
 DatabaseReference ref;
 user userdetail;
